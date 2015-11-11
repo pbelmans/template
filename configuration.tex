@@ -5,10 +5,10 @@
 
 % todonotes configuration
 \newcounter{todocounter}
-\DeclareDocumentCommand\addreference{g}{\stepcounter{todocounter}\todo[color = blue!30, fancyline]{\thetodocounter. Add reference\IfNoValueF{#1}{: #1}}\xspace}
-\DeclareDocumentCommand\checkthis{g}{\stepcounter{todocounter}\todo[color = red!50, fancyline]{\thetodocounter. Check this\IfNoValueF{#1}{: #1}}\xspace}
-\DeclareDocumentCommand\fixthis{g}{\stepcounter{todocounter}\todo[color = orange!50, fancyline]{\thetodocounter. Fix this\IfNoValueF{#1}{: #1}}\xspace}
-\DeclareDocumentCommand\expand{g}{\stepcounter{todocounter}\todo[color = green!50, fancyline]{\thetodocounter. Expand\IfNoValueF{#1}{: #1}}\xspace}
+\DeclareDocumentCommand\addreference{g}{\stepcounter{todocounter}\todo[color = blue!30]{\thetodocounter. Add reference\IfNoValueF{#1}{: #1}}\xspace}
+\DeclareDocumentCommand\checkthis{g}{\stepcounter{todocounter}\todo[color = red!50]{\thetodocounter. Check this\IfNoValueF{#1}{: #1}}\xspace}
+\DeclareDocumentCommand\fixthis{g}{\stepcounter{todocounter}\todo[color = orange!50]{\thetodocounter. Fix this\IfNoValueF{#1}{: #1}}\xspace}
+\DeclareDocumentCommand\expand{g}{\stepcounter{todocounter}\todo[color = green!50]{\thetodocounter. Expand\IfNoValueF{#1}{: #1}}\xspace}
 \newcommand\removethis{\stepcounter{todocounter}\todo[color=yellow!50]{\thetodocounter. Remove this?}}
 
 % environments
@@ -29,3 +29,5 @@
 \makeatletter
 \def\gitfootnote{\gdef\@thefnmark{}\@footnotetext}
 \makeatother
+
+\hypersetup{pagebackref}
