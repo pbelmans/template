@@ -1,5 +1,28 @@
+% bibliography configuration
+\DeclareFieldFormat{mrnumber}{%
+  MR\addcolon\space
+  \ifhyperref
+    {\href{http://www.ams.org/mathscinet-getitem?mr=1#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \printfield{mrnumber}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\usebibmacro{url+urldate}}
+    {}}
+
 \addbibresource{bibliography.bib}
 
+% mathematics configuration
 \relpenalty=10000
 \binoppenalty=10000
 
@@ -29,5 +52,3 @@
 \makeatletter
 \def\gitfootnote{\gdef\@thefnmark{}\@footnotetext}
 \makeatother
-
-\hypersetup{pagebackref}

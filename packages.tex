@@ -5,11 +5,18 @@
 \usepackage{amsfonts}
 \usepackage[fleqn, leqno]{amsmath}
 \usepackage{amsthm}
-\usepackage{biblatex}
+
+% as per https://tex.stackexchange.com/questions/306908/switching-from-amsrefs-to-biblatex
+\usepackage{filecontents}
+\begin{filecontents*}{mrnumber.dbx}
+\DeclareDatamodelFields[type=field,datatype=verbatim]{mrnumber}
+\DeclareDatamodelEntryfields{mrnumber}
+\end{filecontents*}
+\usepackage[backend=biber, maxbibnames=99, datamodel=mrnumber]{biblatex}
+
 \usepackage{booktabs}
 \usepackage{diagbox}
 \usepackage{enumitem}
-\usepackage{fixltx2e}
 \usepackage{mathtools}
 \usepackage{parskip}
 \usepackage{thmtools}
